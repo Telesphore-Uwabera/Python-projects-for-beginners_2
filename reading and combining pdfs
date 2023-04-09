@@ -1,0 +1,19 @@
+import PyPDF2
+
+def reader(self, ):
+    with open("first.pdf", "rb") as file:
+        reader= PyPDF2.PdfReader.__init__(file)
+        print(reader.numPages)
+        page=reader.getPage(0)
+        page.rotateClockwoise(90)
+        writer=PyPDF2.PdfWriter()
+        writer.addpage(page)
+        with open("rotated.pdf", "wb") as output:
+            writer.write(output)
+#combining pdf
+
+merger=PyPDF2.PdfMerger()
+file_names=["first.pdf", "second.pdf"]
+for file_name in file_names:
+    merger.append(file_name)
+merger.write("combined.pdf")
