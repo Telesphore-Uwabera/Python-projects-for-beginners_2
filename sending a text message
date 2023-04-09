@@ -1,0 +1,13 @@
+from http import client
+from twilio.rest import Client
+
+account_sid = "AC6898f5630619892899b68e1f275ed185"
+auth_token = "586c8509d6c2da979be2c811f39f2eff"
+
+client = Client(account_sid, auth_token)
+
+client.messages.create(
+    to="+250739305120",
+    from_="+15075744166",
+    body="This my first message from Python course to my lovely Pookie"
+)
